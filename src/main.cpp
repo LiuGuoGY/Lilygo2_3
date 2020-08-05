@@ -17,12 +17,24 @@
 #include "Esp.h"
 #include "board_def.h"
 #include <Button2.h>
+#include <FreeRTOS.h>
 
+
+void vTaskCode( void * pvParameters )
+{
+    while(1)
+    {
+        delay(500);
+        Serial.println("task is running");
+    }
+}
 
 void setup()
 {
     Serial.begin(115200);
     delay(500);
+    TaskHandle_t xHandle = NULL;
+    xTaskCreate(vTaskCode, "vTask", 1024, 0, 1, &xHandle);
     Serial.println("system start");
 }
 
