@@ -2,6 +2,7 @@
 #include <GxEPD.h>
 #include <GxIO/GxIO_SPI/GxIO_SPI.h>
 #include <GxIO/GxIO.h>
+#include "board_def.h"
 
 #include <Fonts/FreeMono9pt7b.h>
 #include <Fonts/FreeMonoBoldOblique9pt7b.h>
